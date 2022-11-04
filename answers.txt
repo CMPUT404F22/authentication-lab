@@ -1,0 +1,29 @@
+Question 1: What authentication scheme is used by default in Django Rest Framework's browsable API? How is this managed?
+Answer: Default authentication scheme is HTTP Basic Auth. This is managed by Django's built-in user model.
+
+Question 2: What authentication scheme is used by httpie when querying with the -a or --auth option flag?
+Answer: HTTP Basic Auth.
+
+Question 3: What is the difference between Session Authentication and Token Authentication? 
+How is Token Authentication an improvement over Basic Authentication?
+Answer: The difference between session adn token authentication is - in session authentication,
+the server stores the authentication details whereas in token authentication the client stores the
+authentication details.
+Token based authentication is better than basic authentication for the following reasons -
+* Token based authentication is more flexible to use because you can easily expire or regenerate tokens
+  without affecting the user's account password.
+* There is the option of having multiple tokens per user which can be used for different API routes or use
+  cases.
+* If the token is compromised, the vulneribility is only limited to the token and not the user's account.
+  It can be fixed by revoking the token.
+
+Question 4: Provide a high level summary of what happens during an OAuth2 authentication flow. 
+For instance: bitbucket.org > Log In > Log in with Google. What happens when I click "Log in with Google"?
+Answer: bitbucket.org is the client. When you click "Login with Google", you give an authorization grant
+to bitbucket.org to access your google account. bitbucket.org uses sends a request to Google's authorization
+server with this authorization grant. Google's authorzation server returns an access token to bitbucket.org.
+With this access token, bitbucket.org sends a request to Google resource server to access your Google account.
+If the access token is valid, Google's resource server returns your account to bitbucket.org.
+
+Question 5: Please provide a link to your code.
+Answer: https://github.com/CMPUT404F22/authentication-lab
